@@ -14,31 +14,39 @@
   <body>
     <h1>DDE</h1>
 
-    <table style="width: 30%;">
+    <table style="width: 25%;">
       <tr>
         <td>28.5 (2028-02-16)</td>
         <td id = "a"></td>
+        <td id = "b"></td>
+        <td id = "c"></td>
       </tr>
       <tr>
         <td>25 (2024-08-16)</td>
-        <td id = "b"></td>
+        <td id = "d"></td>
+        <td id = "e"></td>
+        <td id = "f"></td>
       </tr>
 
     </table>
 
     <script>
       a = Math.trunc(1 + (new Date(2028, 2 - 1, 15) - new Date()) / 1000 / 3600 / 24)
-      document.getElementById("a").innerHTML = 
-        a + " (" + Math.trunc(a / 365.25 * (252 - 36) - 3 * 5) + ")";
+      ay = a / 365.25
+      document.getElementById("a").innerHTML = a
+      document.getElementById("b").innerHTML = Math.trunc(ay * (252 - 36) - 3 * 5)
+      //document.getElementById("c").innerHTML = Math.round(ay * 100) / 100
+      document.getElementById("c").innerHTML = Math.trunc(ay) + " + " + Math.round((ay - Math.trunc(ay)) * 12 * 10) / 10  + "/12"
 
       b = Math.trunc(1 + (new Date(2024, 8 - 1, 16) - new Date()) / 1000 / 3600 / 24)
-      document.getElementById("b").innerHTML = 
-        b + " (" + Math.trunc(b / 365.25 * (252 - 36)) + ")";
-
+      by = b / 365.25
+      document.getElementById("d").innerHTML = b
+      document.getElementById("e").innerHTML = Math.trunc(by * (252 - 36))
+      //document.getElementById("f").innerHTML = Math.round(by * 100) / 100
+      document.getElementById("f").innerHTML = Math.trunc(by) + " + " + Math.round((by - Math.trunc(by)) * 12 * 10) / 10  + "/12"
       document.write('<p><a href="https://pl.wikipedia.org/wiki/' + a + '">Rok ' + a + '</a></p>');
 
     </script>
-
 
   </body>
   
