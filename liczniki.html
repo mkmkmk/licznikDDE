@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8"/>
+  </head>
+
+  <style>
+    body { color: white; background-color: #111111; }
+    h1 { text-align: center; }
+    table, th, td { border:1px double; margin-left:auto;margin-right:auto; text-align: center; }
+  </style>
+
+  <body>
+    <h1>DDE</h1>
+
+    <table style="width: 30%;">
+      <tr>
+        <td>28.5 (2028-02-16)</td>
+        <td id = "a"></td>
+      </tr>
+      <tr>
+        <td>25 (2024-08-16)</td>
+        <td id = "b"></td>
+      </tr>
+
+    </table>
+
+    <script>
+      a = Math.trunc(1 + (new Date(2028, 2 - 1, 15) - new Date()) / 1000 / 3600 / 24)
+      document.getElementById("a").innerHTML = 
+        a + " (" + Math.trunc(a / 365.25 * (252 - 36) - 3 * 5) + ")";
+
+      b = Math.trunc(1 + (new Date(2024, 8 - 1, 16) - new Date()) / 1000 / 3600 / 24)
+      document.getElementById("b").innerHTML = 
+        b + " (" + Math.trunc(b / 365.25 * (252 - 36)) + ")";
+
+      document.write('<p><a href="https://pl.wikipedia.org/wiki/' + a + '">Rok ' + a + '</a></p>');
+
+    </script>
+
+
+  </body>
+  
+</html>
+
