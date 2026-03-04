@@ -32,9 +32,24 @@
 
       document.write('<p><a href="https://pl.wikipedia.org/wiki/' + a + '">Rok ' + a + '</a></p>');
 
+      function countP() {
+        let today = new Date();
+        let targetDate = new Date(2028, 2 - 1, 15);
+        let count = 0;
+        let current = new Date(today);
+        while (current <= targetDate) {
+          if (current.getDay() === 5)
+            count++;
+          current.setDate(current.getDate() + 1);
+        }
+        return count;
+      }
+
+      if (new Date().getDay() === 5)
+        document.write('<p>P' + countP() + '!</p>');
+
     </script>
 
   </body>
   
 </html>
-
