@@ -24,7 +24,7 @@
     </table>
 
     <script>
-      a = Math.trunc(1 + (new Date(2028, 2 - 1, 15) - new Date()) / 1000 / 3600 / 24)
+      a = Math.trunc(1 + (new Date(2028, 2 - 1, 16) - new Date()) / 1000 / 3600 / 24)
       ay = a / 365.25
       document.getElementById("a").innerHTML = a
       document.getElementById("b").innerHTML = Math.trunc(ay * (252 - 36) - 3 * 5)
@@ -34,7 +34,7 @@
 
       function countP() {
         let today = new Date();
-        let targetDate = new Date(2028, 2 - 1, 15);
+        let targetDate = new Date(2028, 2 - 1, 16);
         let count = 0;
         let current = new Date(today);
         while (current <= targetDate) {
